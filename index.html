@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manu Soman</title>
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-    }
-
-    body {
-      background-color: #2e2a35;
-    }
-    
-    h1 {
-      margin-top: 200px;
-      font-size: 30px;
-      text-align: center;
-      color: #b0a6c1;
-    }
-
-    h2 {
-      margin-top: 30px;
-      font-size: 30px;
-      text-align: center;
-      color: #544d5e;  
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manu Soman</title>
+    <link rel="shortcut icon" type="image/x-icon" href="res/favicon.svg" />
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <h1>Personal dev site of Manu Soman</h1>
-  <h2>WIP</h2>
-</body
-</html>
+
+<header>
+    <div class="main_frame">
+        <ul id="topNav" class="no_bullet horizontal">
+          <li>
+              <a href="https://manusoman.github.io" class="textLink">Home</a>
+          </li><li>
+              <a href="https://manusoman.github.io/MindLogs" class="textLink">Blog</a>
+          </li>
+      </ul>
+
+        <p>The personal website of</p>
+        <h1>Manu Soman</h1>
+        <ul id="contacts" class="no_bullet horizontal">
+            <li><a class="textLink" href="https://twitter.com/manu_221b">Twitter</a>
+            </li><li><a class="textLink" href="https://www.facebook.com/manu221b">Facebook</a>
+            </li><li><a class="textLink" href="https://github.com/manusoman">GitHub</a>
+            </li><li><a class="textLink" href="mailto:mindlogs.blog@gmail.com">Email</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="main_frame">
+        <ul class="no_bullet" id="articles">
+            <li>
+                <p>Aspiring Computer Programmer and Engineer.</p>
+                <p>Former UX Designer.</p>
+            </li>
+            <li>
+                <p>Figuring out life.</p>
+                <p>Love to discuss ideas.</p>
+                <p>Not a social butterfly.</p>
+            </li>
+            <li>
+                <p>Know Javascript very well. NodeJS is awesome!</p>
+                <p>Loved Python for its simplicity, but Julia beat it!</p>
+                <p>If you don't know C, you don't know computer. Period.</p>
+            </li>
+            <li>
+                <p>Physics and Mathematics are the blue prints of the physical world.</p>
+            </li>
+            <li>
+                <p>Love to take part in building things and learning new stuff.</p>
+                <p>If you are looking for a partner for your cool new project, let me know :)</p>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <div class="main_frame">
+        <span id="copyright"></span>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        const copyright = document.getElementById('copyright');
+
+        fetch('https://manusoman.github.io/MindLogs/settings.json')
+        .then(res => res.json())
+        .then(data => { copyright.innerHTML = `Manu Soman © ${ data.current_year }` })
+        .catch(err => {
+            copyright.innerHTML = `Manu Soman © ${ new Date().getFullYear() }`;
+            console.error(err);
+        });
+    })();
+</script>
+</body>
+</html> 
