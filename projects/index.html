@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manu Soman | Projects</title>
+    <link rel="shortcut icon" type="image/x-icon" href="res/favicon.svg" />
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<header>
+    <div class="main_frame">
+        <ul id="topNav" class="no_bullet horizontal">
+            <li>
+                <a href="https://manusoman.github.io" class="textLink">Home</a>
+            </li><li>
+                <a href="https://manusoman.github.io/MindLogs" class="textLink">Blog</a>
+            </li><li>
+                <a href="https://manusoman.github.io/projects" class="textLink">Projects</a>
+            </li>
+        </ul>
+      
+        <h1>Projects</h1>
+        <ul id="contacts" class="no_bullet horizontal">
+            <li><a class="textLink" href="https://twitter.com/manu_221b">Twitter</a>
+            </li><li><a class="textLink" href="https://github.com/manusoman">GitHub</a>
+            </li><li><a class="textLink" href="mailto:mindlogs.blog@gmail.com">Email</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="main_frame">
+        <ul class="no_bullet" id="projects">
+            <li>
+                <h2>Simple Neural Network</h2>
+                <p>My own implementation of the "Hello World" program of Neural Networks - a hand-written digit recognizer!</p>
+                <a class="launcher" target="_blank" href="#">Launch</a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <div class="main_frame">
+        <span id="copyright"></span>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        const copyright = document.getElementById('copyright');
+
+        fetch('https://manusoman.github.io/MindLogs/settings.json')
+        .then(res => res.json())
+        .then(data => { copyright.innerHTML = `© ${ data.current_year } Manu Soman` })
+        .catch(err => {
+            copyright.innerHTML = `© ${ new Date().getFullYear() } Manu Soman`;
+            console.error(err);
+        });
+    })();
+</script>
+</body>
+</html> 
